@@ -1,0 +1,10 @@
+.wheel {
+    display: flex;
+    flex-direction: column;
+    transition: transform 800ms ease-in-out;
+}
+
+.wheel-element {
+    transition: opacity 800ms ease-in-out, transform 800ms ease-in-out;
+    width: 0.7em;
+}

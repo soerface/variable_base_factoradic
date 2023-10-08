@@ -1,32 +1,19 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  max-height: 100%;
+  overflow: hidden;
 }
 
-/*.counter {*/
-/*    animation: counterAnimation 1s ease-in-out   infinite;*/
-/*}*/
+.counter {
+  display: flex;
+  flex-direction: row;
+  font-size: 30pt;
+  font-weight: bold;
+  transform: translateY(50%) ;
+  user-select: none;
+}
 
-/*    @keyframes counterAnimation {*/
-/*      0% {*/
-/*        opacity: 1;*/
-/*        transform: translateY(0);*/
-/*      }*/
-
-/*      50% {*/
-/*        opacity: 0;*/
-/*        transform: translateY(-20px);*/
-/*      }*/
-
-/*      51% {*/
-/*        opacity: 0;*/
-/*        transform: translateY(20px);*/
-/*      }*/
-
-/*      100% {*/
-/*        opacity: 1;*/
-/*        transform: translateY(0);*/
-/*      }*/
-/*    }*/
+p {
+  transition: opacity 3s ease-in-out;
+}
