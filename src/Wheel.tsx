@@ -1,14 +1,15 @@
 import './Wheel.css'
 
-function Wheel({ elements, currentIndex }: { elements: string[], currentIndex: number}) {
-    const transform = `translateY(${currentIndex * -10}%)`
+function Wheel({ elements, currentIndex, longestWheel }: { elements: string[], currentIndex: number, longestWheel: number}) {
+    const transform = `translateY(${currentIndex * -(100 / longestWheel) -(100 / longestWheel / 2)}%)`
     return <>
         <div className="wheel" style={{ transform }}>
             {elements.map((element, index) => {
                 const offset = index - currentIndex
-                const opacity = Math.max(0.3, 1 - Math.abs(offset) / 8)
-                const transform = `translateY(${offset * -48}%) scale(${opacity})`
-                return <div key={index} className="wheel-element" style={{ opacity, transform }}>{element}</div>
+                const opacity = offset ? Math.max(0.3, 0.8 - Math.abs(offset) / longestWheel) : 1;
+                const transform = `scale(${opacity})`
+                const transformOrigin = 'center bottom'
+                return <div key={index} className="wheel-element" style={{ opacity, transform, transformOrigin }}>{element}</div>
             })}
             {/*{elements} ({currentIndex})*/}
             {/*{elements.map((element, index) => {*/}

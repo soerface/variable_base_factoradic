@@ -2,16 +2,26 @@
   margin: 0 auto;
   text-align: center;
   height: 100%;
-  overflow: hidden;
+}
+
+.counterBox {
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.debug div {
+    outline: 1px solid #f00;
+    background: rgba(255, 0, 255, 0.2);
 }
 
 .counter {
   display: flex;
   flex-direction: row;
-  font-size: 30pt;
+  width: fit-content;
+  font-size: 2.5em;
   font-weight: bold;
-  transform: translateY(50%) ;
   user-select: none;
+  margin: 0 auto;
 }
 
 p {
