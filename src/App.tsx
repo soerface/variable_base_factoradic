@@ -3,8 +3,24 @@ import './App.css'
 import {toFactoradic} from "variable-base-factoradic";
 import Wheel from "./Wheel.tsx";
 
+
+
+const installInstructions = {
+    python: <>
+        <pre>pip install variable-base-factoradic</pre>
+        <small style={{textAlign: "right", display: "block"}}><a href={"https://pypi.org/project/variable-base-factoradic/"} target="_blank">PyPI</a></small>
+    </>,
+    javascript: <>
+        <pre>npm install variable-base-factoradic</pre>
+        <small style={{textAlign: "right", display: "block"}}><a href={"https://www.npmjs.com/package/variable-base-factoradic"} target="_blank">npm</a></small>
+    </>
+}
+
+type InstallInstructions = keyof typeof installInstructions
+
 function App() {
     const [count, setCount] = useState(parseInt(localStorage.getItem("count") || "0"))
+    const [selectedInstructions, setSelectedInstructions] = useState<InstallInstructions>("python");
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -46,6 +62,16 @@ function App() {
                 </div>
             </div>
             {/*<button onClick={() => setCount(0)}>Reset</button>*/}
+            <div className="installInstructions">
+                <div className="tabbar">
+                    <button onClick={() => setSelectedInstructions("python")} className={selectedInstructions === "python" ? "active" : ""}>Python</button>
+                    <button onClick={() => setSelectedInstructions("javascript")} className={selectedInstructions === "javascript" ? "active" : ""}>JavaScript</button>
+                </div>
+                <div className="content">
+                    {installInstructions[selectedInstructions]}
+                </div>
+            </div>
+
         </>
     )
 }

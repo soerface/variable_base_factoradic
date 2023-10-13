@@ -14,6 +14,56 @@
     background: rgba(255, 0, 255, 0.2);
 }
 
+.installInstructions {
+  justify-content: center;
+  padding: 0;
+    margin: 1em 0 0;
+}
+
+.installInstructions .content {
+    padding: 1em;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-top: none;
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+.installInstructions .tabbar {
+    display: flex;
+}
+
+.installInstructions .tabbar button {
+    flex: 1 100%;
+    border: 2px solid #1e1e1e;
+    border-radius: 0.5em 0.5em 0 0;
+    padding: 0.5em 1em;
+    background: none;
+    cursor: pointer;
+    transition: background 200ms, color 200ms;
+    font-weight: normal;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media (prefers-color-scheme: light) {
+    .installInstructions .tabbar button {
+        border: 2px solid #d0d0d0;
+    }
+}
+
+.installInstructions .tabbar button:focus,
+.installInstructions .tabbar button:focus-visible {
+  outline: none;
+}
+
+.installInstructions .tabbar button:not(.active) {
+    background: rgba(0, 0, 0, 0.2);
+    color: #7a7a7a;
+}
+
+.installInstructions .tabbar button.active {
+    border-bottom: transparent;
+    padding-bottom: calc(0.5em + 2px);
+}
+
 .counter {
   display: flex;
   flex-direction: row;
