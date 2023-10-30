@@ -13,7 +13,11 @@ const installInstructions = {
     javascript: <>
         <pre>npm install variable-base-factoradic</pre>
         <small style={{textAlign: "right", display: "block"}}><a href={"https://www.npmjs.com/package/variable-base-factoradic"} target="_blank">npm</a></small>
-    </>
+    </>,
+    rust: <>
+        <pre>cargo add variable_base_factoradic</pre>
+        <small style={{textAlign: "right", display: "block"}}><a href={"https://crates.io/crates/variable_base_factoradic"} target="_blank">crates.io</a></small>
+    </>,
 }
 
 type InstallInstructions = keyof typeof installInstructions
@@ -66,6 +70,7 @@ function App() {
                 <div className="tabbar">
                     <button onClick={() => setSelectedInstructions("python")} className={selectedInstructions === "python" ? "active" : ""}>Python</button>
                     <button onClick={() => setSelectedInstructions("javascript")} className={selectedInstructions === "javascript" ? "active" : ""}>JavaScript</button>
+                    <button onClick={() => setSelectedInstructions("rust")} className={selectedInstructions === "rust" ? "active" : ""}>Rust</button>
                 </div>
                 <div className="content">
                     {installInstructions[selectedInstructions]}
